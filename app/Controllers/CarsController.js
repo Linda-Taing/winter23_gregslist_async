@@ -4,7 +4,7 @@ import { carsService } from "../Services/CarsService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
-
+import { setText } from "../Utils/Writer.js";
 
 // NOTE CRUD METHODS
 // ✅ CREATE || POST
@@ -22,9 +22,15 @@ function _drawCars() {
 }
 
 export class CarsController {
-  constructor () {
+  constructor() {
+    this.show()
     this.getCars()
     appState.on('cars', _drawCars)
+  }
+  // from first Greg'sList//
+  show() {
+    setText('add-listing-button', '🚙 A new Car?')
+    _drawCars()
   }
 
   // ✅ READ || GET
