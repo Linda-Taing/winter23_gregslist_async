@@ -47,7 +47,9 @@ export class CarsController {
   // ✅ CREATE || POST
   async createCar() {
     try {
+      // @ts-ignore
       window.event.preventDefault()
+      // @ts-ignore
       const form = window.event.target
       const formData = getFormData(form)
       // NOTE make sure your form data is formatted correctly to work with your API!!!
@@ -88,7 +90,9 @@ export class CarsController {
 
   async editCar(carId) {
     try {
+      // @ts-ignore
       window.event.preventDefault()
+      // @ts-ignore
       const form = window.event.target
       const formData = getFormData(form)
       console.log(formData);

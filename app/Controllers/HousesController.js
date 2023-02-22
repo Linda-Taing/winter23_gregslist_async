@@ -37,10 +37,11 @@ export class HousesController {
     }
     async createHouse() {
         try {
+            // @ts-ignore
             window.event.preventDefault()
+            // @ts-ignore
             const form = window.event.target
             const formData = getFormData(form)
-            // NOTE make sure your form data is formatted correctly to work with your API!!!
             console.log(formData);
             await housesService.createHouse(formData)
         } catch (error) {
@@ -60,7 +61,9 @@ export class HousesController {
     }
     async editHouse(houseId) {
         try {
+            // @ts-ignore
             window.event.preventDefault()
+            // @ts-ignore
             const form = window.event.target
             const formData = getFormData(form)
             console.log(formData);
