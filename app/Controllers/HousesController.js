@@ -4,6 +4,7 @@ import { appState } from "../AppState.js"
 import { housesService } from "../Services/HousesService.js"
 import { setHTML } from "../Utils/Writer.js"
 import { House } from "../Models/House.js"
+import { getFormData } from "../Utils/FormHandler.js"
 
 
 function _drawHouses() {
@@ -47,10 +48,10 @@ export class HousesController {
             Pop.error(error.message)
         }
     }
-    async removeHouse(carId) {
+    async removeHouse(houseId) {
         try {
             if (await Pop.confirm()) {
-                await housesService.removeHouse(carId)
+                await housesService.removeHouse(houseId)
             }
         } catch (error) {
             console.error(error)

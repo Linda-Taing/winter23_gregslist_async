@@ -19,11 +19,11 @@ class HousesService {
         appState.houses.push(actualHouse)
         appState.emit('houses')
     }
-    async removeHouse(houseId) {
-        const res = await sandboxApi.delete('/houses/' + houseId)
-        console.log('[removing house]', res.data);
-        appState.houses = appState.houses.filter(house => house.id != houseId)
-    }
+    // async removeHouse(houseId) {
+    //     const res = await sandboxApi.delete('/houses/' + houseId)
+    //     console.log('[removing house]', res.data);
+    //     appState.houses = appState.houses.filter(house => house.id != houseId)
+    // }
     async removeHouse(houseId) {
         const res = await sandboxApi.delete('/houses/' + houseId)
         console.log('[removing 🏡]', res.data);
